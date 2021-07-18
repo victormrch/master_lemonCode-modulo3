@@ -18,6 +18,10 @@ export const Movie: React.FC<Props> = (props) => {
         <h3>{movie.title}</h3>
         <span>{movie.vote_average}</span>
       </div>
+      <div className={classes.movieOver}>
+        <h2>Overview:</h2>
+        <p>{movie.overview}</p>
+      </div>
     </div>
   );
 };

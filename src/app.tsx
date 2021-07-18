@@ -18,10 +18,12 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="movie-container">
-      {movies.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
-    </div>
+    <>
+      <div className="movie-container">
+        {movies.map((movie) => (
+          <Movie key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </>
   );
 };
