@@ -6,9 +6,12 @@ const path = require("path");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
+  resolve: {
+    extensions: [".js", ".ts", ".tsx"],
+  },
   entry: {
-    app: "./index.js",
-    appStyles: "./style.scss",
+    app: "./index.tsx",
+    appStyles: ["./style.scss"],
   },
   output: {
     filename: "[name].[chunkhash].js",
@@ -17,14 +20,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                exportLocalsConvention: "camelCase",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                localIdentContext: path.resolve(__dirname, "src"),
+                localIdentHashPrefix: "practica-modulo-3", //Optional
+              },
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.css$/,
@@ -54,7 +71,4 @@ module.exports = {
       chunkFilename: "[id.css]",
     }),
   ],
-  devServer: {
-    stats: "errors-only",
-  },
 };

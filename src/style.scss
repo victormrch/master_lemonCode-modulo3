@@ -1,13 +1,19 @@
-$backgroundColor: #6e304b;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+$backgroundColor: #22254b;
 $textColor: #f2f1ef;
 
-.title {
-  background: $backgroundColor;
-  color: $textColor;
-  font-size: 200%;
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.logo {
-  width: 200px;
+body {
+  background: $backgroundColor;
+  color: $textColor;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.movie-container {
+  display: flex;
 }
