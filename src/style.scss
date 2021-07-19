@@ -1,13 +1,46 @@
-$backgroundColor: #6e304b;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+$backgroundColor: #22254b;
 $textColor: #f2f1ef;
 
-.title {
-  background: $backgroundColor;
-  color: $textColor;
-  font-size: 200%;
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.logo {
-  width: 200px;
+body {
+  background: $backgroundColor;
+  color: $textColor;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  background: black;
+}
+
+header {
+  background-color: #373b69;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:global(.search) {
+  font-family: inherit;
+  background-color: transparent;
+  border: 2px solid $backgroundColor;
+  border-radius: 50px;
+  color: $textColor;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+}
+
+:global(.search:focus) {
+  outline: none;
+}
+
+:global(.logo) {
+  width: auto;
+  height: 50px;
 }
