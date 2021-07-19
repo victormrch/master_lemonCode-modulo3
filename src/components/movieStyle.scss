@@ -8,7 +8,7 @@ $textColor: white;
   overflow: hidden;
   position: relative;
   margin: 1rem;
-  width: 300px;
+  width: 250px;
 }
 
 .movie-info {
@@ -46,9 +46,30 @@ $textColor: white;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
 }
 
 h3 {
   margin: 0;
+}
+
+:global(.tag) {
+  background-color: #22254b;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+:global(.tag.green) {
+  color: green;
+}
+
+:global(.tag.orange) {
+  color: orange;
+}
+
+:global(.tag.red) {
+  color: red;
 }
